@@ -40,6 +40,10 @@ group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
   gem 'rspec-rails', '~> 3.4', '>= 3.4.2'
+
+  # net-http is not in the core, so we need to include it to avoid the warning:
+  # already initialized constant NET::ProtocRetryError
+  gem 'net-http'
 end
 
 group :development do
