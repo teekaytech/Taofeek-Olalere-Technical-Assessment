@@ -21,6 +21,6 @@ class Api::V1::TicketsController < ApplicationController
     end
 
     def ticket_params
-      params.require(:ticket).permit(:user_id, :event_id)
+      params.require(:ticket).permit(:user_id, :event_id, :status)
     end
 end
