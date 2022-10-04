@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   namespace :api, defaults: { format: 'json' } do
     namespace :v1 do
       resources :events
+      resources :tickets, only: %i[ create show ]
       get 'users/:id/events', to: 'events#user_events'
     end
   end
