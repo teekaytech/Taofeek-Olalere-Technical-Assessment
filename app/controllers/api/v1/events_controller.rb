@@ -4,6 +4,9 @@ class Api::V1::EventsController < ApplicationController
 
   def index
     @events = Event.all
+    .with_status((params[:status]))
+    .with_category((params[:category]))
+    .order(created_at: :desc)
   end
 
   def show

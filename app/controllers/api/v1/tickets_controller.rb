@@ -6,7 +6,6 @@ class Api::V1::TicketsController < ApplicationController
   end
 
   def create
-    puts current_user.tickets
     @ticket = current_user.tickets.build(ticket_params)
 
     if @ticket.save
