@@ -1,4 +1,5 @@
 class Api::V1::EventsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_event, only: %i[ show update destroy ]
 
   # GET /api/v1/events
