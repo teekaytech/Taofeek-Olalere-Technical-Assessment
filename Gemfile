@@ -53,4 +53,5 @@ group :test do
   gem 'faker', '~> 2.23'
   gem 'database_cleaner', '~> 2.0', '>= 2.0.1'
   gem 'simplecov', '~> 0.21.2', require: false
+  gem 'jsonapi-rspec'
 end

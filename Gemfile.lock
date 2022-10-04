@@ -94,6 +94,9 @@ GEM
     jbuilder (2.11.5)
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
+    jsonapi-rspec (0.0.11)
+      rspec-core
+      rspec-expectations
     loofah (2.19.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -196,6 +199,7 @@ DEPENDENCIES
   factory_bot_rails (~> 4.0)
   faker (~> 2.23)
   jbuilder
+  jsonapi-rspec
   pg (~> 1.1)
   puma (~> 5.0)
   rack-cors
