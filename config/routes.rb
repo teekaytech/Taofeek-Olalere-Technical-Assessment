@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   namespace :api, defaults: { format: 'json' } do
     namespace :v1 do
       resources :events
+      get 'users/:id/events', to: 'events#user_events'
     end
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
