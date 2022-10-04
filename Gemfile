@@ -36,6 +36,10 @@ gem "bootsnap", require: false
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 gem "rack-cors"
 
+# Authentication
+gem 'devise', '~> 4.8', '>= 4.8.1'
+gem 'devise-jwt', '~> 0.10.0'
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
@@ -44,6 +48,9 @@ group :development, :test do
   # net-http is not in the core, so we need to include it to avoid the warning:
   # already initialized constant NET::ProtocRetryError
   gem 'net-http'
+
+  # Use dotenv for rails credentials storage
+  gem 'dotenv-rails', '~> 2.1', '>= 2.1.1'
 end
 
 group :development do
