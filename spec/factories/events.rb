@@ -7,5 +7,13 @@ FactoryBot.define do
     category { Event.categories.keys.sample }
     start_date { Faker::Date.between(from: 2.days.from_now, to: 5.days.from_now) }
     end_date { Faker::Date.between(from: 6.days.from_now, to: 10.days.from_now) }
+
+    trait :inactive do
+      status { :inactive }
+    end
+
+    trait :paid do
+      category { :paid }
+    end
   end
 end
