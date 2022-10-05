@@ -13,8 +13,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def sign_up_failure(resource)
     render json: {
-      message: "Error signing up: #{resource.errors&.full_messages&.split("\n")&.first[0]}" },
-      status: :unprocessable_entity
+             message: "Error signing up: #{resource.errors&.full_messages&.split("\n")&.first&.[](0)}"
+           },
+           status: :unprocessable_entity
   end
-
 end

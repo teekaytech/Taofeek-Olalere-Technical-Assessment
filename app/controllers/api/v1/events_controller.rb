@@ -1,16 +1,15 @@
 class Api::V1::EventsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_event, only: %i[ show update destroy ]
+  before_action :set_event, only: %i[show update destroy]
 
   def index
     @events = Event.all
-    .with_status((params[:status]))
-    .with_category((params[:category]))
-    .order(created_at: :desc)
+      .with_status((params[:status]))
+      .with_category((params[:category]))
+      .order(created_at: :desc)
   end
 
-  def show
-  end
+  def show; end
 
   def create
     @event = current_user.events.build(event_params)
@@ -29,7 +28,7 @@ class Api::V1::EventsController < ApplicationController
 
   def update
     if @event.update(event_params)
-      render :show, status: :ok, location:  @api_v1_event
+      render :show, status: :ok, location: @api_v1_event
     else
       render json: @event.errors, status: :unprocessable_entity
     end
@@ -41,11 +40,11 @@ class Api::V1::EventsController < ApplicationController
 
   private
 
-    def set_event
-      @event = Event.find(params[:id])
-    end
+  def set_event
+    @event = Event.find(params[:id])
+  end
 
-    def event_params
-      params.require(:event).permit(:title, :description, :status, :category, :start_date, :end_date, :user_id)
-    end
+  def event_params
+    params.require(:event).permit(:title, :description, :status, :category, :start_date, :end_date, :user_id)
+  end
 end

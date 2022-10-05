@@ -1,1 +1,1 @@
-json.partial! "ticket", ticket: @ticket
+json.partial! 'ticket', ticket: @ticket

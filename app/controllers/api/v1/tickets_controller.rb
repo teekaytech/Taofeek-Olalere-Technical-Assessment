@@ -1,9 +1,8 @@
 class Api::V1::TicketsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_ticket, only: %i[ show ]
+  before_action :set_ticket, only: %i[show]
 
-  def show
-  end
+  def show; end
 
   def create
     @ticket = current_user.tickets.build(ticket_params)
@@ -16,11 +15,12 @@ class Api::V1::TicketsController < ApplicationController
   end
 
   private
-    def set_ticket
-      @ticket = Ticket.includes(:user, :event).find(params[:id])
-    end
 
-    def ticket_params
-      params.require(:ticket).permit(:user_id, :event_id, :status)
-    end
+  def set_ticket
+    @ticket = Ticket.includes(:user, :event).find(params[:id])
+  end
+
+  def ticket_params
+    params.require(:ticket).permit(:user_id, :event_id, :status)
+  end
 end
