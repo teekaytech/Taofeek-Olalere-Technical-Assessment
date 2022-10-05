@@ -51,6 +51,9 @@ group :development, :test do
 
   # Use dotenv for rails credentials storage
   gem 'dotenv-rails', '~> 2.1', '>= 2.1.1'
+
+  # Code analyzer
+  gem 'rubocop', '>= 1.0', '< 2.0'
 end
 
 group :development do
